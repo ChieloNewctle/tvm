@@ -108,7 +108,8 @@ class RPCSession(object):
                 raise ValueError("target must present when file is a bytearray")
             blob = data
         else:
-            blob = bytearray(open(data, "rb").read())
+            with open(data, "rb") as f:
+                blob = bytearray(f.read())
             if not target:
                 target = os.path.basename(data)
 

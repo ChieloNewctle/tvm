@@ -440,17 +440,20 @@ class Server(object):
 
     def terminate(self):
         """Terminate the server process"""
-        if self.use_popen:
-            if self.proc:
+        if self.proc:
+            if self.use_popen:
                 if platform.system() == "Windows":
                     os.kill(self.proc.pid, signal.CTRL_C_EVENT)
                 else:
                     os.killpg(self.proc.pid, signal.SIGTERM)
-                self.proc = None
-        else:
-            if self.proc:
+            else:
                 self.proc.terminate()
-                self.proc = None
+            if hasattr(self.proc, 'wait'):
+                try:
+                    self.proc.wait()
+                except:
+                    pass
+            self.proc = None
 
     def __del__(self):
         self.terminate()

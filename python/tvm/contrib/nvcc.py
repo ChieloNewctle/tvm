@@ -98,8 +98,8 @@ def compile_cuda(code, target="ptx", arch=None, options=None, path_target=None):
         msg += "\nCompilation error:\n"
         msg += py_str(out)
         raise RuntimeError(msg)
-
-    data = bytearray(open(file_target, "rb").read())
+    with open(file_target, "rb") as f:
+        data = bytearray(f.read())
     if not data:
         raise RuntimeError("Compilation error: empty result is generated")
     return data
