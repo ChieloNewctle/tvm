@@ -35,7 +35,7 @@ namespace codegen {
 
 /*!
  * \brief Create a metadata module wrapper. The helper is used by different
- *        codegens, such as graph runtime codegen and the vm compiler.
+ *        codegens, such as graph executor codegen and the vm compiler.
  *
  * \param params The metadata for initialization of all modules.
  * \param target_module the internal module that is compiled by tvm.
@@ -116,8 +116,12 @@ runtime::Module CreateMetadataModule(
       crt_exportable_modules.push_back(target_module);
       target_module = CreateCSourceCrtMetadataModule(crt_exportable_modules, target);
     } else if (target->kind->name == "llvm") {
+#ifdef TVM_LLVM_VERSION
       crt_exportable_modules.push_back(target_module);
       target_module = CreateLLVMCrtMetadataModule(crt_exportable_modules, target);
+#else   // TVM_LLVM_VERSION
+      LOG(FATAL) << "TVM was not built with LLVM enabled.";
+#endif  // TVM_LLVM_VERSION
     }
   } else {
     if (!non_crt_exportable_modules.empty()) {

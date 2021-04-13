@@ -31,6 +31,7 @@ from .stmt import Stmt, LetStmt, AssertStmt, ForKind, For
 from .stmt import BufferStore, BufferRealize, Store, ProducerStore, Allocate, AttrStmt
 from .stmt import ProducerRealize, SeqStmt
 from .stmt import IfThenElse, Evaluate, Prefetch, stmt_seq, stmt_list
+from .stmt import BufferRegion, MatchBufferRegion, Block, BlockRealize
 
 from .function import PrimFunc
 
@@ -47,6 +48,9 @@ from .op import div, indexdiv, indexmod, truncdiv, truncmod, floordiv, floormod
 from .op import comm_reducer, min, max, sum
 from .op import q_multiply_shift
 
+from .schedule import StmtSRef, BlockScope, ScheduleState
+
+from . import schedule
 from . import ir_builder
 from . import transform
 from . import analysis

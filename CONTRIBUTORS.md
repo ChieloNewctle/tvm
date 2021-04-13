@@ -60,6 +60,7 @@ We do encourage everyone to work anything they are interested in.
 - [Thierry Moreau](https://github.com/tmoreau89) (PMC): @tmoreau89 - vta
 - [Kazutaka Morita](https://github.com/kazum): @kazum - frontends, opencl
 - [Krzysztof Parzyszek](https://github.com/kparzysz-quic): @kparzysz-quic - hexagon, llvm
+- [Andrew Reusch](https://github.com/areusch): @areusch - runtime, µTVM
 - [Jared Roesch](https://github.com/jroesch) (PMC): @jroesch - relay
 - [Siju Samuel](https://github.com/siju-samuel): @siju-samuel - frontends
 - [Siva](https://github.com/srkreddy1238): @srkreddy1238 - frontends, golang
@@ -69,7 +70,7 @@ We do encourage everyone to work anything they are interested in.
 - [Andrew Tulloch](https://github.com/ajtulloch): @ajtulloch - topi, compiler, runtime
 - [Luis Vega](https://github.com/vegaluisjose): @vegaluisjose - vta, chisel
 - [Leyuan Wang](https://github.com/Laurawly) (PMC): @Laurawly: - topi
-- [Yao Wang](https://github.com/kevinthesun): @kevinthesun: - topi, vision
+- [Yao Wang](https://github.com/kevinthesun): @kevinthesun (PMC): - topi, vision
 - [Jian Weng](https://github.com/were): @were: - hybrid script
 - [Zhao Wu](https://github.com/FrozenGene): @FrozenGene - runtime, topi, frontends
 - [Eddie Yan](https://github.com/eqy) (PMC): @eqy - runtime, autotvm, rpc, topi
